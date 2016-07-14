@@ -1,7 +1,35 @@
+<header>
+  {{#if account.isSignedIn}}
+  Username: {{account.username}}
+  <button {{action "signOut" on="click"}}>sign out</button>
+  {{else}}
+
+  {{#if showSignIn}}
+  <form {{action "signIn" username password on="submit"}}>
+    {{input value=username placeholder="username"}}
+    {{input type="password" value=password placeholder="password"}}
+    <button type="submit">sign in</button>
+    <a href="#" {{action "toggleForm"}}>sign up</a>
+  </form>
+  {{else}}
+  <form {{action "signUp" username password on="submit"}}>
+    {{input value=username placeholder="username"}}
+    {{input type="password" value=password placeholder="password"}}
+    <button type="submit">sign up</button>
+    <a href="#" {{action "toggleForm"}}>sign in</a>
+  </form>
+  {{/if}}
+
+  {{/if}}
+</header>
+
+<hr>
+
+<main>
 <div class="add-link">
-  <form {{action "addLink" on="submit"}}>
+  <form {{action "addLink" url on="submit"}}>
     <h3>Add new Link</h3>
-    <input type="url" name="url" value="" placeholder="https://example.com/foo/bar.html">
+    {{input type="url" value=url placeholder="https://example.com/foo/bar.html"}}
     <button type="submit">submit</button>
   </form>
 </div>
@@ -12,3 +40,4 @@
     <a href="{{link.url}}">{{link.url}}</a>
   </article>
 {{/each}}
+</main>

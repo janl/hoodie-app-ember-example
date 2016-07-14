@@ -18,11 +18,9 @@ body {
 }
 
 input {
-  display: block;
   font: inherit;
   padding: .5em .7em;
   margin: 1em 0;
-  width: 100%;
 }
 
 button {
@@ -30,4 +28,9 @@ button {
   border: 0;
   font: inherit;
   padding: .5em .7em;
+}
+
+main input {
+  display: block;
+  width: 100%;
 }
