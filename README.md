@@ -6,7 +6,6 @@ Setup
 git clone https://github.com/gr2m/hoodie-app-ember-example.git
 cd hoodie-app-ember-example
 npm install
-bower install
 ```
 
 Start dev server
@@ -15,8 +14,7 @@ Start dev server
 ember server
 ```
 
-Ues [ember-hoodie](https://github.com/courajs/ember-hoodie). If you see an error
-that `ember-hoodie` cannot be found, create `node_modules/ember-hoodie/addon/index.js`
+Uses [ember-hoodie](https://github.com/courajs/ember-hoodie). If you see an error that `ember-hoodie` cannot be found, create `node_modules/ember-hoodie/addon/index.js`
 with this content:
 
 ```js
